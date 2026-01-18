@@ -3,10 +3,13 @@ import cors from "cors";
 import mongoose, { mongo } from "mongoose";
 import config from "./config";
 import { Request, Response } from "express";
+import userRoute from "./modules/user/user.route";
 
 const app = express();
 app.use(cors());
 app.use(express.json());
+
+app.use(userRoute);
 
 app.get("/", (req: Request, res: Response) => {
     res.json({
