@@ -2,10 +2,18 @@ import express from "express";
 import cors from "cors";
 import mongoose, { mongo } from "mongoose";
 import config from "./config";
+import { Request, Response } from "express";
 
 const app = express();
 app.use(cors());
 app.use(express.json());
+
+app.get("/", (req: Request, res: Response) => {
+    res.json({
+        success: true,
+        message: "('server is running!"
+    })
+});
 
 const startServer = () => {
   try {
