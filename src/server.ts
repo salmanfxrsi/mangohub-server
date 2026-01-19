@@ -14,7 +14,7 @@ app.use(userRoute);
 app.get("/", (req: Request, res: Response) => {
     res.json({
         success: true,
-        message: "('server is running!"
+        message: "server is running!"
     })
 });
 
